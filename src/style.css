@@ -1,3 +1,16 @@
 body {
-  background: red;
+  background: lightblue;
+}
+
+div {
+  color: #abccfc;
+  position: fixed 0 0 0;
+}
+
+:root {
+  --mainColor: red;
+}
+
+a {
+  color: var(--mainColor);
 }

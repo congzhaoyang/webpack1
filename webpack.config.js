@@ -1,12 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+// const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: {
-    // app: './src/index.js',
-    // print: './src/print.js'
     app: './src/index.js'
   },
   devtool: 'inline-source-map',
@@ -20,7 +18,7 @@ module.exports = {
     // })
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new UglifyJSPlugin()
+    // new UglifyJsPlugin()
   ],
   output: {
     filename: '[name].bundle.js',
@@ -31,9 +29,20 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
+        exclude: /node_modules/,
         use: [
-          'style-loader',
-          'css-loader'
+            {
+                loader: 'style-loader',
+            },
+            {
+                loader: 'css-loader',
+                options: {
+                    importLoaders: 1,
+                }
+            },
+            // {
+            //     loader: 'postcss-loader'
+            // }
         ]
       },
       {
@@ -53,6 +62,26 @@ module.exports = {
         use: [
           'xml-loader'
         ]
+      },
+      {
+        test: /\.scss$/,
+        use: [{
+            loader: "style-loader" // creates style nodes from JS strings
+        }, {
+            loader: "css-loader" // translates CSS into CommonJS
+        }, {
+            loader: "sass-loader" // compiles Sass to CSS
+        }]
+      },
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['env']
+          }
+        }
       }
     ]
   }
