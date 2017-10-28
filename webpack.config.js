@@ -18,7 +18,7 @@ module.exports = {
     // new HtmlWebpackPlugin({
     //   title: 'Output Management'
     // })
-    new ExtractTextPlugin("/dist/[name].css"),
+    new ExtractTextPlugin("css/[name].css"),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     // new UglifyJsPlugin()
@@ -35,7 +35,7 @@ module.exports = {
         exclude: /node_modules/,
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
-          use: "css-loader"
+          use: ["css-loader", 'resolve-url-loader']
         }),
         // use: [
         //     {
@@ -52,6 +52,13 @@ module.exports = {
         //     }
         // ]
       },
+      // {
+      //   test: /\.css|\.scss$/,
+      //   use: ExtractTextPlugin.extract({
+      //       fallback: 'style-loader',
+      //       use: ['css-loader', 'sass-loader', 'resolve-url-loader'],
+      //   })
+      // },
       {
         test: /\.(png|jpg|jpeg|gif)$/,
         use: [{
