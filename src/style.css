@@ -1,5 +1,5 @@
 body {
-  background: lightblue;
+  background: rgb(37, 78, 90);
 }
 
 div {
@@ -13,4 +13,10 @@ div {
 
 a {
   color: var(--mainColor);
+}
+
+img {
+  height: 200px;
+  width: 200px;
+  border: 1px solid red;
 }
