@@ -3,11 +3,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 // const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+var px2rem = require('postcss-px2rem')
 
 module.exports = {
   entry: {
     app: './src/index.js',
-    style: './src/style.css'
+    // style: './src/style.css'
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -32,10 +33,11 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        exclude: /node_modules/,
+        // exclude: /node_modules/,
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
-          use: ["css-loader", 'resolve-url-loader']
+          // use: ['style-loader', "css-loader", 'postcss-loader', 'resolve-url-loader']
+          use: ['style-loader', "css-loader", 'postcss-loader']
         }),
         // use: [
         //     {
@@ -82,7 +84,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.scss$/,
+        test: /\.(scss|sass)$/,
         use: [{
             loader: "style-loader" // creates style nodes from JS strings
         }, {
@@ -95,7 +97,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
+        // exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
           options: {

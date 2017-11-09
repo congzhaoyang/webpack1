@@ -1,2 +1,6 @@
-import './style.css'
+// import './style.css'
+// import '../node_modules/normalize.css/normalize.css'
+// import '../node_modules/reset.css/reset.css'
+// import '../node_modules/minireset.css/minireset.min.css'
+import '../node_modules/minireset.css/minireset.sass'
 import './style.scss'

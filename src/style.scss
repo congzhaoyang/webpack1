@@ -1,6 +1,119 @@
-div {
-    height: 100px;
-    width: 100px;
-    // background: #ddd;
-    border: 1px solid green;
+html {
+    // font-size: .444444rem!important;
+    background: #f3f4f5;
+    font-size: 12px;
+}
+
+.report-list {
+    max-width: 17.777778rem;
+    min-width: 8.888889rem;
+    margin: 0 auto;
+
+    li {
+
+        list-style: none;
+        min-height: 1.222222rem;
+        background: #ffffff;
+
+        &:nth-last-of-type(1) {
+
+            a {
+                border: none;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            position: relative;
+            display: block;
+            border-bottom: .027778rem solid #D4D4D4;
+            margin-left: .361111rem;
+
+            .org-logo {
+                size: .888889rem .888889rem;
+                border: .027778rem solid red;
+                float: left;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            p {
+                display: block;
+                font-family:PingFangSC-Regular;
+                font-size: .416667rem;
+                color: #333333;
+                letter-spacing: -.01rem;
+                line-height: .5rem;
+                padding: .333333rem 0 .388889rem 0;
+                margin-left: 1.555556rem - .361111rem;
+                margin-right: 1.166667rem;
+            }
+
+            .link-arrow {
+                size: .222222rem .361111rem;
+                background: url('../src/img/link-arrow2.png') no-repeat;
+                background-size: cover;
+                position: absolute;
+                top: 50%;
+                margin-right: .444444rem;
+                right: 0%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    li.link1 {
+        a {
+            .org-logo {
+                background: url('../src/img/footer-logo.png') no-repeat;
+                // background-position: -7.916667rem 0rem;
+                background-position: -285px 0rem;
+                background-size: cover; 
+            }
+        }
+    }
+
+    li.link2 {
+        a {
+            .org-logo {
+                background: url('../src/img/footer-logo.png') no-repeat;
+                background-position: -360px 0rem;
+                // background-position: -10rem 0rem;
+                background-size: cover;
+            }
+        }
+    }
+
+    li.link3 {
+        a {
+            .org-logo {
+                background: url('../src/img/warn.png') no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+
+    li.link4 {
+        a {
+            .org-logo {
+                background: url('../src/img/trust.png') no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+}
+
+.report-phone {
+    font-family: PingFangSC-Regular;
+    font-size: .388889rem;
+    color: #999999;
+    letter-spacing: -.009444rem;
+    text-align: center;
+    margin-top: .75rem;
+
+    a {
+        text-decoration: none;
+        color: #999999;
+    }
 }
