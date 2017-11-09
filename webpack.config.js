@@ -3,12 +3,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 // const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-var px2rem = require('postcss-px2rem')
+// var px2rem = require('postcss-px2rem')
 
 module.exports = {
   entry: {
     app: './src/index.js',
-    // style: './src/style.css'
+    style: './src/style.scss'
   },
   devtool: 'inline-source-map',
   devServer: {
